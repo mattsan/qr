@@ -7,6 +7,7 @@ defmodule Qr.MixProject do
       version: "0.1.0",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
+      escript: escript(),
       deps: deps()
     ]
   end
@@ -15,6 +16,10 @@ defmodule Qr.MixProject do
     [
       extra_applications: [:logger]
     ]
+  end
+
+  def escript do
+    [main_module: Qr.CLI]
   end
 
   defp deps do
